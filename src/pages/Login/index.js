@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
         height: normalize(40),
         justifyContent: "center",
         borderWidth: 1,
+        borderColor:"#dfdfdf",
         paddingLeft: normalize(10),
         marginTop: normalize(50)
     },
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     },
     text1: {
         fontSize: normalize(20),
-        fontWeight: "bold"
+        color:"white"
     },
     text2: {
         fontSize: normalize(15),

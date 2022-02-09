@@ -10,7 +10,7 @@ const Intro = (props) => {
         {
             key: 1,
             title: 'Title 1',
-            text: 'Ta`aruf membantu mencari pasangan untuk anda',
+            text: `Ta'aruf membantu mencari pasangan untuk anda`,
             image: lovers,
             backgroundColor: '#fc77a3',
         },
@@ -27,26 +27,28 @@ const Intro = (props) => {
 
     const renderItem = ({ item }) => {
         return (
-            <View style={ item.key == 1 ? styles.background : {backgroundColor:"#fff", height:"100%"}}>
+            <View style={item.key == 1 ? styles.background : { backgroundColor: "#fff", height: "100%" }}>
                 {/* <Text style>{item.title}</Text> */}
-                <View style={{justifyContent:"center", alignItems:"center", paddingTop:normalize(100)}}>
+                <View style={{ justifyContent: "center", alignItems: "center", paddingTop: normalize(130) }}>
                     <Image source={item.image} style={item.key == 1 ? styles.imgSize : null} />
                 </View>
-                <Text style={{ textAlign: "center", fontSize:normalize(20) }}>{item.text}</Text>
+                <View style={item.key == 1 ? {paddingLeft:normalize(50), paddingRight:normalize(50)} : {paddingLeft:normalize(40), paddingRight:normalize(40)}}>
+                    <Text style={item.key == 1 ? { textAlign: "center", fontSize: normalize(24), color: "white" } : { textAlign: "center", fontSize: normalize(24), color:"#3cb4f4" }}>{item.text}</Text>
+                </View>
             </View>
         );
     }
 
     const renderDone = () => {
-        return(
+        return (
             <View>
-                <Text style={{color:"black", fontSize:normalize(20)}}>Done</Text>
+                <Text style={{ color: "black", fontSize: normalize(20) }}>Done</Text>
             </View>
         )
     }
 
     return (
-        <AppIntroSlider renderItem={renderItem} data={slides} onDone={()=>props.navigation.navigate("login")} renderDoneButton={renderDone} />
+        <AppIntroSlider renderItem={renderItem} data={slides} onDone={() => props.navigation.navigate("login")} renderDoneButton={renderDone} />
     )
 }
 
